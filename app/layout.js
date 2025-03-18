@@ -19,11 +19,21 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`} style={{overflowX:"hidden"}}
       >
+        <header className={`${geistSans.variable} ${geistMono.variable} antialiased`} style={{backgroundColor:"#D9D9D9", width:"100vw", height:"100px"}}>
+        </header>
+        <main style={{backgroundColor:"#000016", minHeight:"100vh", color:"#FEFEFE"}}>
         {children}
+        </main>
+        <footer className={`${geistSans.variable} ${geistMono.variable} antialiased`} style={{backgroundColor:"#050510", minHeight:"calc(100vh - 100px)", color:"#FEFEFE"}}>
+          <a href="/impressum">Impressum</a>
+          <a href="/datenschutz">Datenschutz</a>
+        </footer>
       </body>
+      
     </html>
   );
 }
